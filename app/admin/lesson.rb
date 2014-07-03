@@ -1,4 +1,5 @@
 ActiveAdmin.register Lesson do
+  permit_params :lesson_title
 
   
   # See permitted parameters documentation:
