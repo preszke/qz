@@ -1,4 +1,5 @@
 ActiveAdmin.register Question do
+  permit_params :question, :question_type
 
   
   # See permitted parameters documentation:
