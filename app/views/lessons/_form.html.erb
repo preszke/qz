@@ -8,7 +8,16 @@
 
   <div class="form-group">
     <div class='col-md-offset-2 col-md-10'>
+        <p>
+      <%= label_tag(:check_label, "Is private:") %>
+        <%= check_box_tag(:isPrivate) %>
+      </p>
+      <p>
+      <%= label_tag(:question_label, "Question:") %>
+      <%= text_field :question_text, :class => 'form-control' %>
+      </p>
       <%= f.submit nil, :class => 'btn btn-primary' %>
+      
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   lessons_path, :class => 'btn btn-default' %>
     </div>
