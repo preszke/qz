@@ -3,7 +3,7 @@ class CreateLessons < ActiveRecord::Migration
     create_table :lessons do |t|
       t.references :user, index: true
       t.text :lesson_title
-      t.text :question_text
+      t.string :question_text
       t.boolean :isPrivate
 
       t.timestamps
