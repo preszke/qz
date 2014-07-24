@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20140703220432) do
   create_table "lessons", force: true do |t|
     t.integer  "user_id"
     t.text     "lesson_title"
+    t.string   "question_text"
+    t.boolean  "isPrivate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
