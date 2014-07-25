@@ -1,5 +1,16 @@
 == README
 
+
+* Install elastic search
+* start elastic search (elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml) (should start on port 9300)
+* start rails server
+* Create some new lessons (with some real words - like 'lesson about car' 'this is dog' 
+* In qz directory type 'rails console'
+* Lesson.search 'dog'
+* It should return all the lessons containing the word dog
+
+* Also on the main page (localhost:3000) it should show you all the lessons with 'dog'
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
