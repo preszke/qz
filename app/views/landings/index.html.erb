@@ -1,9 +1,42 @@
 <%= link_to "Lessons", :lessons %>
 
-<p> all the lessons with word dog: </p>
+<%= form_tag @lesson, :method => 'get' do %>
+  <%= label_tag :search_title %>
+  <%= text_field_tag :search_title, params[:search_title] %>
+  <%= submit_tag :search %>
+<% end %>
 
-<ul>
-  <% @lessons_with_word_dog.each do |lesson| %>
-    <li> <%= lesson.lesson_title %> <%= lesson.question_text %></li>
-  <% end %>
-</ul>
+
+<% if @lessons.any? %>
+  <div class="page-header">
+    <h1><%=t '.title', :default => "Finded lessons" %></h1>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Lesson title</th>
+        <th>Created at</th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lessons.each do |lesson| %>
+        <tr>
+          <td><%= lesson.id %></td>
+          <td><%= lesson.lesson_title %></td>
+          <td><%=l lesson.created_at, format: :long %></td>
+          <td>
+            <%= link_to lesson_path(lesson), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+              <%= glyph 'info-sign' %>
+              <%= glyph 'pencil' %>
+            <%- end -%>
+            <%= link_to lesson_path(lesson), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+              <%= glyph 'remove' %>
+            <%- end -%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
