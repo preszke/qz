@@ -1,0 +1,41 @@
+== README
+
+
+* Install elastic search
+* For interactions with elastic search we use this gem https://github.com/ankane/searchkick - already installed and working
+* start elastic search (elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml) (should start on port 9300)
+* start rails server
+* Create some new lessons (with some real words - like 'lesson about car' 'this is dog' 
+* In qz directory type 'rails console'
+* (If you want your OLD lessons to be indexed type Lesson.reindex - all the new ones are already in elastic search)
+* Lesson.search 'dog'
+* It should return all the lessons containing the word dog
+
+* Also on the main page (localhost:3000) it should show you all the lessons with 'dog'
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

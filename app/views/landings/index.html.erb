@@ -1,0 +1,9 @@
+<%= link_to "Lessons", :lessons %>
+
+<p> all the lessons with word dog: </p>
+
+<ul>
+  <% @lessons_with_word_dog.each do |lesson| %>
+    <li> <%= lesson.lesson_title %> <%= lesson.question_text %></li>
+  <% end %>
+</ul>
