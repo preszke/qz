@@ -15,9 +15,21 @@
 
 *= require_self
 */
-@import "bootstrap_configuration";
+@import "bootswatch/cerulean/variables";
 
+
+@import "bootstrap_configuration";
+// Then bootstrap itself
 @import "bootstrap";
+
+
+
+// And finally bootswatch style itself
+@import "bootswatch/cerulean/bootswatch";
+
+// Whatever application styles you have go last
+
+
 
 //->Prelang (ui_framework:twitter_bootstrap)
 
