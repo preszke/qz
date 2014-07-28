@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'nested_form_fields'
 
 gem 'searchkick'
 
