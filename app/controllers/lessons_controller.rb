@@ -1,9 +1,9 @@
 class LessonsController < ApplicationController
 
   #->Prelang (scaffolding:rails/scope_to_user)
-  before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
+  before_filter :require_user_signed_in, only: [:new, :edit, :learn, :create, :update, :destroy]
 
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_lesson, only: [:show, :edit, :learn, :update, :destroy, :vote]
 
   # GET /lessons
   # GET /lessons.json
@@ -23,6 +23,12 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1/edit
   def edit
+  end
+
+  # GET /lessons/1/learn
+  def learn
+    @lessons = Lesson.find(params[:id])
+    gon.rabl
   end
 
   # POST /lessons

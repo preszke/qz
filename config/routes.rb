@@ -1,28 +1,30 @@
 Rails.application.routes.draw do
   get 'landings/index'
 
+  post "lessons/:id" => "lessons#learn", as: :learn_lesson
+
   resources :lessons do
-  #->Prelang (voting/acts_as_votable)
-  member do
-    get "vote"
+    #->Prelang (voting/acts_as_votable)
+    member do
+      get "vote"
+    end
   end
-end
 
 
   resources :questions do
-  #->Prelang (voting/acts_as_votable)
-  member do
-    get "vote"
+    #->Prelang (voting/acts_as_votable)
+    member do
+      get "vote"
+    end
   end
-end
 
 
   resources :answers do
-  #->Prelang (voting/acts_as_votable)
-  member do
-    get "vote"
+    #->Prelang (voting/acts_as_votable)
+    member do
+      get "vote"
+    end
   end
-end
 
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
@@ -82,13 +84,13 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
+
   #->Prelang (user_login:devise/stylized_paths)
   devise_scope :user do
     get    "login"   => "devise/sessions#new",         as: :new_user_session
     post   "login"   => "devise/sessions#create",      as: :user_session
     delete "signout" => "devise/sessions#destroy",     as: :destroy_user_session
-    
+
     get    "signup"  => "devise/registrations#new",    as: :new_user_registration
     post   "signup"  => "devise/registrations#create", as: :user_registration
     put    "signup"  => "devise/registrations#update", as: :update_user_registration

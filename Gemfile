@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'gon'
+gem 'rabl-rails'
+
 gem 'nested_form_fields'
 
 gem 'searchkick'
