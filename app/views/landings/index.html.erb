@@ -34,7 +34,7 @@
             <%= link_to lesson_path(lesson), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
               <%= glyph 'remove' %>
             <%- end -%>
-            <%= link_to lesson_path(lesson), :method => :learn, :class => 'btn btn-xs', :title => "#{ t('.learn', :default => t('helpers.links.learn')) }" do %>
+            <%= link_to learn_lesson_path(lesson), :class => 'btn btn-xs', :title => "#{ t('.learn', :default => t('helpers.links.learn')) }" do %>
               <%= glyph 'pencil' %>
             <%- end -%>
           </td>
