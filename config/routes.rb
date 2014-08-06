@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'landings/index'
 
   get "lessons/:id/learn" => "lessons#learn", as: :learn_lesson
+  get "lessons/:id/test" => "lessons#test", as: :test_lesson
+
 
   resources :lessons do
     #->Prelang (voting/acts_as_votable)
