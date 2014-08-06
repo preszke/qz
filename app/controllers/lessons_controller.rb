@@ -31,6 +31,11 @@ class LessonsController < ApplicationController
     gon.rabl
   end
 
+  def test
+    @lessons = Lesson.find(params[:id])
+    gon.rabl
+  end
+
   # POST /lessons
   # POST /lessons.json
   def create
