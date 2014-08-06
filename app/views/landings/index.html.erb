@@ -35,15 +35,12 @@
               <%= glyph 'remove' %>
             <%- end -%>
             <%= link_to learn_lesson_path(lesson), :method => "GET", :class => 'btn btn-xs', :title => "#{ t('.learn', :default => t('helpers.links.learn')) }" do %>
-              <%= glyph 'pencil' %>
-            <%- end -%>
-            <%= link_to test_lesson_path(lesson), :method => "GET", :class => 'btn btn-xs', :title => "#{ t('.test', :default => t('helpers.links.test')) }" do %>
-              <%= glyph 'info-sign' %>
-            <%- end -%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= paginate @lessons %>
-<% end %>
+                <%= glyph 'pencil' %>
+              <%- end -%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @lessons %>
+  <% end %>
