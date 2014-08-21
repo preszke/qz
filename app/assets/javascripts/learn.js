@@ -27,17 +27,17 @@ $(document).ready(function() {
 
         //l = data.questions[i].answers.length;
 
+        var data = {};
+        var template = HandlebarsTemplates['lessons/learn'](data);
+        $('#checkboxes').html(template);
 
-        $('#checkboxes').html(
-                '<div id="checked" class="col-lg-10"></div>');
         for (var j = 0; j < l; j++) {
-            $('#checked').append(
-                    '<div class="checkbox">' +
-                    '<label>' +
-                    '<input class="radio' + j + '" type="checkbox" name="checkbox' + j + '" id="optionsCheck" value="' + data.questions[i].answers[j].id + '" />' +
-                    data.questions[i].answers[j].text +
-                    '</label>' +
-                    '</div>');
+
+
+            var data = {l: l, answerId: data.questions[i].answers[j].id, answerText: data.questions[i].answers[j].text};
+            var template = HandlebarsTemplates['lessons/learn_answers'](data);
+            $('#checked').append(template);
+
             if (Table[i][j]) {
                 $('input[name=checkbox' + j + ']').attr('checked', 'checked');
             }

@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require nested_form_fields
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require_tree .

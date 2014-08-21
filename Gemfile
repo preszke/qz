@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'handlebars_assets'
+
 gem 'gon'
 gem 'rabl-rails'
 
